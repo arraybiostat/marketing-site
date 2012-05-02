@@ -1,0 +1,18 @@
+body.services {
+  .splash {
+    background-image: url(/images/splash/services-splash.jpg);
+  }
+
+  .col {
+    width: 425px;
+    margin-top: 30px;
+
+    &.left {
+      float: left;
+    }
+    &.right {
+      float: right;
+    }
+
+  }
+}

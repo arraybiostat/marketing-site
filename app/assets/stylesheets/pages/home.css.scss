@@ -1,0 +1,20 @@
+@import "shared/colors";
+
+body.home {
+  h2 {
+    text-align: right;
+    width: 798px;
+    float: right;
+    clear: both;
+    margin: 40px 0 0;
+  }
+
+  .splash {
+    height: 431px;
+    background-image: url(/images/splash/symbols_1.jpg);
+  }
+
+  .burst {
+    display: none;
+  }
+}
