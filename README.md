@@ -4,25 +4,35 @@
 
 There's probably a better way to do this... hmm.
 
+* source $ARRAY/array_env.bash
+
 * rebuild assets:
+
 
     RAILS_ENV=production rake assets:precompile
 
 * start server in production mode. eg:
 
-    RAILS_ENV=production rails s -p 8555
 
+    RAILS_ENV=production rails s -p 8555
 
 * generate html files:
 
-    ./script/rebuild 8555
+    ./script/rebuild.rb 8555
 
 
 * Then copy public directory to Github Pages site
 
+
     rsync -vcr $ARRAY/public/ $ARRAY/../arraybiostat.github.com/
 
-* push
+
+* git push arraybiostat.github.com
+
+* Finally, clean up public/assets for future development mode
+
+    ./script/cleanup.rb
+
 
 
 ### Using a secondary Github account?

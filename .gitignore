@@ -1,0 +1,5 @@
+.DS_Store
+/log
+/gems
+/tmp
+/public/assets
