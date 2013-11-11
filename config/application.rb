@@ -7,6 +7,7 @@ require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require "bootstrap-sass"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -60,6 +61,6 @@ module Arrayhome
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    config.assets.version = '1.1'
   end
 end
