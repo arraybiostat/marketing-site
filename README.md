@@ -9,7 +9,7 @@ There's probably a better way to do this... hmm.
 * rebuild assets:
 
 
-    RAILS_ENV=production rake assets:precompile
+    RAILS_ENV=production bundle exec rake assets:precompile
 
 * start server in production mode. eg:
 
