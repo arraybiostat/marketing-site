@@ -4,6 +4,9 @@
 
 There's probably a better way to do this... hmm.
 
+TODO: evaluate: stasis.me, middleman, etc
+
+
 * source $ARRAY/array_env.bash
 
 * rebuild assets:
