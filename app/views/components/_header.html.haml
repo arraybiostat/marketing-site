@@ -3,6 +3,9 @@
 
 = current_or_link('', yield(:logo))
 
+- content_for :jobs do
+  %a{ href: 'https://docs.google.com/document/d/1JzKJVp33hyHBvV09Tr0faJ0WP9H9rrywKd4Zzin5ods/pub'} JOBS
+  
 - content_for :contact do
   = current_or_link('contact', '<strong>CONTACT</strong>')
 
@@ -16,12 +19,9 @@
   = ":"
   = current_or_link('project_leadership_strategy', 'project leadership strategy')
 
-- content_for :home do
-  = current_or_link('', '<strong>HOME</strong>')
-
 
 %ul.unstyled.navigation
-  - [ :contact, :services, :who, :home ].each do |bracket_content|
+  - [ :contact, :services, :jobs, :who ].each do |bracket_content|
     %li
       %span.bracket [
       = yield(bracket_content)
