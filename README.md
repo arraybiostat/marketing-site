@@ -12,7 +12,7 @@ TODO: evaluate: stasis.me, middleman, etc
 * rebuild assets:
 
 
-    RAILS_ENV=production bundle exec rake assets:precompile
+    RAILS_ENV=production bundle exec rake assets:clean assets:precompile
 
 * start server in production mode. eg:
 
@@ -30,7 +30,7 @@ TODO: evaluate: stasis.me, middleman, etc
     rsync -vcr $ARRAY/public/ $ARRAY/../arraybiostat.github.com/
 
 
-* git push arraybiostat.github.com
+* commit changes and push arraybiostat.github.com
 
 * Finally, clean up public/assets for future development mode
 
