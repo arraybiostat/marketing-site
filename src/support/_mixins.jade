@@ -1,0 +1,7 @@
+mixin current_or_link(dest_page, override)
+  if page && page === dest_page
+    span.current
+      block
+  else
+    a(href="/#{ dest_page === 'home' ? '' : dest_page }")
+      block

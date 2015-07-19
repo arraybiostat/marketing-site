@@ -1,0 +1,28 @@
+@import "bootstrap"; // v3.3.5
+@import "./shared/colors";
+
+.bright {
+  color: $bright;
+}
+.accent {
+  color: $accent;
+}
+
+a {
+  color: $bright;
+  &:hover {
+    color: $accent;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}

@@ -1,0 +1,28 @@
+mixin bracketLi
+  li
+    block
+
+.row.header
+  .logo-col.col-sm-3.col-xs-12
+    +current_or_link('home')
+      img(src="/assets/images/array-logo.gif", alt='Array Biostatistics')
+
+  .navigation-col.col-md-9.col-sm-8.col-xs-12
+    ul.list-unstyled
+      +bracketLi
+        +current_or_link('contact')
+          strong CONTACT
+      +bracketLi
+        +current_or_link('services')
+          strong SERVICES
+      +bracketLi
+        a(href='https://docs.google.com/document/d/1JzKJVp33hyHBvV09Tr0faJ0WP9H9rrywKd4Zzin5ods/pub') JOBS
+      +bracketLi
+        +current_or_link('who_we_are')
+          strong WHO WE ARE
+        | &nbsp;:&nbsp;
+        +current_or_link('customer_service_model')
+          | customer service model
+        | &nbsp;:&nbsp;
+        +current_or_link('project_leadership_strategy')
+          | project leadership strategy

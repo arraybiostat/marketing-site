@@ -1,41 +1,60 @@
+# Array Biostatistics Marketing Website
+
+The [arraybiostat.com](http://arraybiostat.com) website is currently a static site hosted by [Github Pages](https://pages.github.com/). 
+This [marketing-site](https://github.com/arraybiostat/marketing-site) project contains its source, using the Gulp](http://gulpjs.com/) 
+build system to generate the files for (arraybiostat.github.com)[https://github.com/arraybiostat/arraybiostat.github.com],
+permitting the use of [Jade](http://jade-lang.com/) templates for html and [SCSS](http://sass-lang.com/) for css. 
+                       
+
+## Installation
+
+Note: we assume that the `$array` shell variable has been set to point to this marketing-site project directory. Eg, in .bashrc:
+
+    export array="/some/path"
 
 
-# Generating Static Site
+First install [nodejs](https://nodejs.org/) and then:
 
-There's probably a better way to do this... hmm.
-
-TODO: evaluate: stasis.me, middleman, etc
-
-
-* source $ARRAY/array_env.bash
-
-* rebuild assets:
+    cd $array
+    npm install
+  
 
 
-    RAILS_ENV=production bundle exec rake assets:clean assets:precompile
+## Run in Development Mode
 
-* start server in production mode. eg:
+To view the marketing site in a browser before publishing, run: 
 
-
-    RAILS_ENV=production rails s -p 8555
-
-* generate html files:
-
-    ./script/rebuild.rb 8555
+    bin/dev-server
 
 
-* Then copy public directory to Github Pages site
+Then visit `localhost:8080` in your web browser.
 
 
-    rsync -vcr $ARRAY/public/ $ARRAY/../arraybiostat.github.com/
+ 
+## Build And Publish Production Site
+
+The build script compiles the project source to the `$array/generated/production` directory. We then copy the result
+to  
+
+    bin/production-build
+    
+
+This will write the files to `$array/generated/production`
 
 
-* commit changes and push arraybiostat.github.com
+If you want to try the compiled/compressed site locally before publishing: `cd $array/generated/production; python -m SimpleHTTPServer 8080`
 
-* Finally, clean up public/assets for future development mode
 
-    ./script/cleanup.rb
+To publish, update arraybiostat.github.com with the newly generated files, and use git to commit and push the changes. Eg: 
 
+    rsync --verbose --recursive --checksum --delete --exclude '.*' $array/generated/production/ $array/../arraybiostat.github.com/ 
+    cd $array/../arraybiostat.github.com
+    git add *
+    git commit -am 'describe my changes'
+    git push origin master
+   
+
+Github Pages takes minutes to update.
 
 
 ### Using a secondary Github account?
@@ -55,3 +74,9 @@ TODO: evaluate: stasis.me, middleman, etc
       url = git@array-github:arraybiostat/arraybiostat.github.com.git
 
 
+## TODO
+
+* favicon
+* Do not require each individual page to use jade commands for extending the template and defining a content block.
+* sitemap
+* Google Analytics

@@ -1,0 +1,19 @@
+.burst-holder {
+  text-align: center;
+  $burstWidth: 546px;
+
+  .center {
+    width: $burstWidth;
+    margin: 0 auto;
+    position: relative;
+  }
+  .burst {
+    position: absolute;
+    z-index: -1000;
+    bottom: 0;
+    left: 0; // $burstWidth / 2;
+    width: $burstWidth;
+    height: 157px;
+    background-image: url(/assets/images/burst.gif);
+  }
+}

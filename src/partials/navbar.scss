@@ -1,0 +1,53 @@
+@import "shared/colors";
+
+.header {
+  margin-top: 15px;
+  position: relative;
+  height: 44px;
+
+  .navigation-col {
+    li, a, span {
+      font-size: 13px;
+    }
+    ul {
+      height: 44px;
+      display: table-cell;
+      vertical-align: bottom;
+      padding-left: 30px;
+    }
+    li {
+      float: right;
+      line-height: 1em;
+      margin: 3px 0 3px 8px;
+      &:before {
+        content: "[";
+        padding-right: 3px;
+      }
+      &:after {
+        content: "]";
+        padding-left: 3px;
+      }
+      &:before,&:after {
+        position: relative;
+        top: 1px;
+      }
+
+      .current {
+        color: $bright;
+      }
+      a {
+        color: $solid;
+        &:hover {
+          color: $bright;
+        }
+      }
+
+      .bracket {
+        position: relative;
+        bottom: -1px;
+      }
+    }
+  }
+
+}
+

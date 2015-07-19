@@ -1,0 +1,15 @@
+include ../support/_mixins.jade
+doctype html
+block vars
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(property='og:image', content='http://arraybiostat.com/assets/images/array-logo.gif')
+    title #{ title || 'Array Biostatistics' }
+    link(rel='icon', type='image/ico', href='/assets/images/favicon.ico')
+    link(rel='stylesheet', href="/css/#{PROJECT_NAME}.css")
+    script(src="/js/#{PROJECT_NAME}.js")
+    block head
+  body(class= ([ page || 'missing', template || '' ] || [ 'all' ] ).join(' '))
+    block body

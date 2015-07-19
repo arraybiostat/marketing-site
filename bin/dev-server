@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+global.SITE_ENV = 'development'; // note: needs to be set early, before the require statment. (It is used to define gulp tasks, and most are defined when module is loaded/required. Deferring their definition isn't worth the headache)
+var SiteBuilder = require('../lib/site-builder.js');
+
+var builder = new SiteBuilder(); // todo: set options (port) from cli switch
+builder.start();

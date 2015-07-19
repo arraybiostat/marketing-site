@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+var SiteBuilder = require('../lib/site-builder.js');
+
+global.SITE_ENV = 'production';
+var builder = new SiteBuilder();
+
+builder.start();
