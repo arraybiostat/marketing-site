@@ -12,25 +12,28 @@ body.home {
   .splash {
     height: 431px;
     position: relative;
+
+    .rotation {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .splash0 {
+      display: block;
+      background-image: url(/assets/images/splash/symbols_0.jpg);
+    }
+    .splash1 {
+      background-image: url(/assets/images/splash/symbols_1.jpg);
+    }
+    .splash2 {
+      background-image: url(/assets/images/splash/symbols_2.jpg);
+    }
   }
 
-  .splash.rotation {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .splash0 {
-    display: block;
-    background-image: url(/assets/images/splash/symbols_0.jpg);
-  }
-  .splash1 {
-    background-image: url(/assets/images/splash/symbols_1.jpg);
-  }
-  .splash2 {
-    background-image: url(/assets/images/splash/symbols_2.jpg);
-  }
 
   .burst {
     display: none;

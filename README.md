@@ -1,7 +1,7 @@
 # Array Biostatistics Marketing Website
 
 The [arraybiostat.com](http://arraybiostat.com) website is currently a static site hosted by [Github Pages](https://pages.github.com/). 
-This [marketing-site](https://github.com/arraybiostat/marketing-site) project contains its source, using the Gulp](http://gulpjs.com/) 
+This [marketing-site](https://github.com/arraybiostat/marketing-site) repository contains its source, and uses the Gulp](http://gulpjs.com/) 
 build system to generate the files for (arraybiostat.github.com)[https://github.com/arraybiostat/arraybiostat.github.com],
 permitting the use of [Jade](http://jade-lang.com/) templates for html and [SCSS](http://sass-lang.com/) for css. 
                        
@@ -42,7 +42,7 @@ to
 This will write the static site's files to `$arraybio/marketing-site/generated/production`
 
 
-If you want to try the compiled/compressed site locally before publishing: `cd $arraybio/generated/production; python -m SimpleHTTPServer 8080`
+If you want to try the compiled/compressed site locally before publishing: `cd $arraybio/marketing-site/generated/production; python -m SimpleHTTPServer 8080`
 
 
 To publish, update arraybiostat.github.com with the newly generated files, and use git to commit and push the changes. Eg: 
