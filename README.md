@@ -1,23 +1,24 @@
 # Array Biostatistics Marketing Website
 
-The [arraybiostat.com](http://arraybiostat.com) website is currently a static site hosted by [Github Pages](https://pages.github.com/). 
-This [marketing-site](https://github.com/arraybiostat/marketing-site) repository contains its source, and uses the Gulp](http://gulpjs.com/) 
-build system to generate the files for (arraybiostat.github.com)[https://github.com/arraybiostat/arraybiostat.github.com],
-permitting the use of [Jade](http://jade-lang.com/) templates for html and [SCSS](http://sass-lang.com/) for css. 
-                       
+This repository contains the source code for the [arraybiostat.com](http://arraybiostat.com) website. It uses 
+the [Gulp](http://gulpjs.com/) build system to compile [Jade](http://jade-lang.com/) files to html,
+[SCSS](http://sass-lang.com/) files to css, and to organize other images and assets into a format suitable for the static site.
+The generated files can then be pushed to the [arraybiostat.github.com](https://github.com/arraybiostat/arraybiostat.github.com) git 
+repository, which [Github Pages](https://pages.github.com/) serves as arraybiostat.com.
+                         
 
 ## Installation
 
-Note: we assume that the `$arraybio` shell variable has been set to point to the parent of this marketing-site project directory. Eg, in .bashrc:
-
-    export arraybio="/some/path"
-
-
-First install [nodejs](https://nodejs.org/) and then:
+Install [nodejs](https://nodejs.org/) and then:
 
     cd $arraybio/marketing-site
     npm install
   
+
+NOTE: we assume that the `$arraybio` shell variable has been set to point to the parent of this marketing-site project directory. Eg, in .bashrc:
+
+    export arraybio="/some/path/to/arraybiostat/repos"
+
 
 
 ## Run in Development Mode
@@ -33,28 +34,27 @@ Then visit `localhost:8080` in your web browser.
  
 ## Build And Publish Production Site
 
-The build script compiles the project source to the `$arraybio/marketing-site/generated/production` directory. We then copy the result
-to  
+The build script compiles the project source:
 
     bin/production-build
     
 
-This will write the static site's files to `$arraybio/marketing-site/generated/production`
+It will write the site's files to `$arraybio/marketing-site/generated/production`
 
 
-If you want to try the compiled/compressed site locally before publishing: `cd $arraybio/marketing-site/generated/production; python -m SimpleHTTPServer 8080`
+If you want to try the compiled/compressed site locally before publishing, cd to the above directory and `python -m SimpleHTTPServer 8080`
 
 
-To publish, update arraybiostat.github.com with the newly generated files, and use git to commit and push the changes. Eg: 
+To publish, move/copy/sync the newly generated files to `$arraybio/arraybiostat.github.io/` and use git to commit and push the changes. Eg: 
 
-    rsync --verbose --recursive --checksum --delete --exclude '.*' $arraybio/marketing-site/generated/production/ $arraybio/arraybiostat.github.io/ 
+    rsync --verbose --recursive --checksum --delete --exclude '.*' $arraybio/marketing-site/generated/production/ $arraybio/arraybiostat.github.io/f 
     cd $arraybio/arraybiostat.github.com
     git add *
     git commit -am 'describe my changes'
     git push origin master
    
 
-Github Pages takes minutes to update.
+Github Pages may take minutes to update.
 
 
 ### Using a secondary Github account?
