@@ -8,14 +8,14 @@ permitting the use of [Jade](http://jade-lang.com/) templates for html and [SCSS
 
 ## Installation
 
-Note: we assume that the `$array` shell variable has been set to point to this marketing-site project directory. Eg, in .bashrc:
+Note: we assume that the `$arraybio` shell variable has been set to point to the parent of this marketing-site project directory. Eg, in .bashrc:
 
-    export array="/some/path"
+    export arraybio="/some/path"
 
 
 First install [nodejs](https://nodejs.org/) and then:
 
-    cd $array
+    cd $arraybio/marketing-site
     npm install
   
 
@@ -33,22 +33,22 @@ Then visit `localhost:8080` in your web browser.
  
 ## Build And Publish Production Site
 
-The build script compiles the project source to the `$array/generated/production` directory. We then copy the result
+The build script compiles the project source to the `$arraybio/marketing-site/generated/production` directory. We then copy the result
 to  
 
     bin/production-build
     
 
-This will write the files to `$array/generated/production`
+This will write the static site's files to `$arraybio/marketing-site/generated/production`
 
 
-If you want to try the compiled/compressed site locally before publishing: `cd $array/generated/production; python -m SimpleHTTPServer 8080`
+If you want to try the compiled/compressed site locally before publishing: `cd $arraybio/generated/production; python -m SimpleHTTPServer 8080`
 
 
 To publish, update arraybiostat.github.com with the newly generated files, and use git to commit and push the changes. Eg: 
 
-    rsync --verbose --recursive --checksum --delete --exclude '.*' $array/generated/production/ $array/../arraybiostat.github.com/ 
-    cd $array/../arraybiostat.github.com
+    rsync --verbose --recursive --checksum --delete --exclude '.*' $arraybio/marketing-site/generated/production/ $arraybio/arraybiostat.github.com/ 
+    cd $arraybio/arraybiostat.github.com
     git add *
     git commit -am 'describe my changes'
     git push origin master
