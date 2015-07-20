@@ -47,7 +47,7 @@ If you want to try the compiled/compressed site locally before publishing: `cd $
 
 To publish, update arraybiostat.github.com with the newly generated files, and use git to commit and push the changes. Eg: 
 
-    rsync --verbose --recursive --checksum --delete --exclude '.*' $arraybio/marketing-site/generated/production/ $arraybio/arraybiostat.github.com/ 
+    rsync --verbose --recursive --checksum --delete --exclude '.*' $arraybio/marketing-site/generated/production/ $arraybio/arraybiostat.github.io/ 
     cd $arraybio/arraybiostat.github.com
     git add *
     git commit -am 'describe my changes'
