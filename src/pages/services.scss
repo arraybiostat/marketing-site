@@ -3,16 +3,23 @@ body.services {
     background-image: url(/assets/images/splash/services-splash.jpg);
   }
 
-  .col {
-    width: 425px;
-    margin-top: 30px;
+  .row.partners {
+    margin-top: 50px;
+    padding-bottom: 200px;
+    .partner {
+      max-width: 650px;
+      margin-left: 120px;
+      .logo {
+        max-height: 160px;
+        max-width: 160px;
+        margin: 0 25px 60px 0;
+        float: left;
+      }
 
-    &.left {
-      float: left;
+      &.numerus-ltd .logo {
+        margin-top: 33px;
+      }
     }
-    &.right {
-      float: right;
-    }
-
   }
+
 }
